@@ -10,3 +10,10 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+terraform {
+  backend "s3" {
+    bucket = "aws-nuthan-bucker"
+    key    = "myapp/terraform.tfstate"
+    region = "ap-south-1"
+  }
+}

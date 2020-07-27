@@ -5,6 +5,7 @@ provider "aws" {
 }
 resource "aws_s3_bucket" "bucket_create" {
   bucket = "test-nuthan-bucket1"
+  force_destroy = true
   versioning{
     enabled = false
   }
@@ -14,5 +15,12 @@ resource "aws_s3_bucket" "bucket_create" {
         sse_algorithm = "AES256"
       }
     }
+  }
+}
+terraform {
+  backend "s3" {
+    bucket = "aws-nuthan-bucker"
+    key    = "myapp/terraform.tfstate"
+    region = "ap-south-1"
   }
 }
