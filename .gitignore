@@ -1,0 +1,7 @@
+.terraform
+ansible/*/*
+ansible
+terraform.tfstate*
+terraform.tfstate.d
+terraform.tfstate.d/*
+terraform.tfstate.d/*/*
